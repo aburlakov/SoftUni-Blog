@@ -1,0 +1,43 @@
+a {
+    text-decoration: none;
+    color: #565656;
+}
+
+.dot {
+    margin-top: 17px;
+    margin-right: 12px;
+    float: left;
+    width: 20px;
+    border-radius: 40px;
+    background-color: #6a7cc0;
+}
+
+.title {
+    font: 32px Oswald;
+    font-weight: 600;
+    vertical-align: middle;
+    color: #000000;
+}
+
+.subtitle {
+    font: 16px Lato;
+    margin-left: 3%;
+    color: #000000 ;
+}
+
+.content {
+    padding-top: 2.5%;
+    font: 16px Lato;
+    font-weight: 500;
+    width: 80%;
+    margin-left: 3%;
+    word-wrap: break-word;
+}
+
+.articles {
+    margin-left: 5%;
+}
+
+.single-post {
+    margin-bottom: 5%;
+}

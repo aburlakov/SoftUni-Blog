@@ -1,0 +1,43 @@
+<aside class="sidebar">
+	<div class="logo"><img height="100" width="150" src="images/html_css_javascript.png" alt=""></div>
+	<hr>
+	<nav>
+		<ul>
+			<li class="single-menu-element">
+				<a href="#/" class="single-menu-element-link">
+					Home
+				</a>
+			</li>
+
+			<li class="single-menu-element">
+				<a href="#/login" class="single-menu-element-link">
+					Login
+				</a>
+			</li>
+
+			<li class="single-menu-element">
+				<a href="#/register" class="single-menu-element-link">
+					Register
+				</a>
+			</li>
+		</ul>
+		<hr>
+		<h2 class="recent-posts-title">Recent Posts</h2>
+		<hr>
+
+		<ul class="recent-posts"></ul>
+	</nav>
+</aside>
+<main class="main-content">
+	<header class="blog-title">
+		<h3>home</h3>
+	</header>
+	<div id="sort-dropdown">
+		<select id="sort-selector" style="float: right; margin-right: 20%">
+			<option selected="true" disabled>Sort by:</option>
+			<option value="newest">Newest First</option>
+			<option value="oldest">Oldest First</option>
+		</select>
+	</div>
+	<ul class="articles" id="article"></ul>
+</main>
