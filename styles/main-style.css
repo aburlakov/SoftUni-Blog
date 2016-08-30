@@ -26,6 +26,7 @@ a {
 }
 
 .content {
+    border-radius: 5px;
     padding-top: 2.5%;
     font: 16px Lato;
     font-weight: 500;

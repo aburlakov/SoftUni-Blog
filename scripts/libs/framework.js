@@ -1,5 +1,3 @@
-//DOCUMENTATION https://github.com/SoftUni-ES-BlackBox-Framework/blackbox
-
 class Requester {
     /*Handle requests*/
     constructor(authorizationService) {
@@ -37,7 +35,6 @@ class Requester {
              if ($("#loader-modal").length) {
              $("#loader-modal").css("display", "block");
              // $(".wrapper").css("display", "none");
-
              }
              },*/
             success: successCallBack,
