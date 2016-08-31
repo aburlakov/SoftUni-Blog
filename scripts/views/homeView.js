@@ -29,10 +29,7 @@ class HomeView {
                 $('.articles').html(renderedPosts);
                 /*Hide all  buttons that provide functionality for registered users*/
                 $(".deleteBtn").hide();
-                $(".likeBtn").hide();
-                $(".editBtn").hide();
-                $(".commentBtn").hide();
-                $(".commentTextarea").hide();
+                $(".editBtn").hide();;
             });
         });
     }
@@ -79,13 +76,6 @@ class HomeView {
                         $('#del-' + i).hide();
                         $('#edit-' + i).hide();
                     }
-
-                    /*Iterate posts and find liked ones*/
-                    for (let c = 0; c < mainData[i].voters.length; c++) {
-                        if (mainData[i].voters[c] == sessionStorage['userId']) {
-                            document.getElementById("like-" + mainData[i]._id).innerHTML = "Unlike";
-                        }
-                    }
                 }
 
                 /*Delete buttons and confirmation dialogs*/
@@ -101,21 +91,6 @@ class HomeView {
                             }
                         }
                     });
-                });
-
-                /*Like buttons handling*/
-                $('.likeBtn').on('click', function (ev) {
-                    let updateData;
-                    let postId = this.id;
-                    postId = postId.split("-")[1];
-                    /*Iterate every post and find the corresponding one.!*/
-                    for (let i = 0; i < mainData.length; i++) {
-                        if (mainData[i]._id == postId) {
-                            updateData = mainData[i];
-                            break;
-                        }
-                    }
-                    triggerEvent('ratePost', updateData);
                 });
 
                 /*Edit buttons handling*/
@@ -136,31 +111,6 @@ class HomeView {
                 /*Posts sorting handling*/
                 $("#sort-selector").on('change', function () {
                     triggerEvent('sortPosts', this.value)
-                });
-
-                /*Comments handling*/
-                $('.commentBtn').on('click', function (ev) {
-                    let updateData;
-                    let postId = this.id;
-                    postId = postId.split("-")[1];
-                    /*Iterate every post and find the corresponding one.!*/
-                    for (let i = 0; i < mainData.length; i++) {
-                        if (mainData[i]._id == postId) {
-                            updateData = mainData[i];
-                            break;
-                        }
-                    }
-                    let content = $('#commentText-' + postId).val();
-                    let author = sessionStorage['username'];
-                    content = escapeHtml(content);
-                    author = escapeHtml(author);
-                    let newComment = {
-                        content: content,
-                        author: author
-                    };
-                    /*Add new comment to comments array*/
-                    updateData.comments.push(newComment);
-                    triggerEvent('commentPost', updateData);
                 });
             });
         });

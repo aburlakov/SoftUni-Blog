@@ -70,20 +70,4 @@ class PostController {
                 showPopup('error', "An error has occurred while attempting to edit a post.");
             });
     }
-
-    commentPost(requestData) {
-        let requestUrl = this._baseServiceUrl + requestData._id;
-        delete requestData.postId;
-        let CommentContent = requestData.comments[requestData.comments.length - 1].content;
-        let CommentAuthor = requestData.comments[requestData.comments.length - 1].author;
-        this._requester.put(requestUrl, requestData,
-            function success(data) {
-                showPopup('success', "You have successfully commented a post.");
-                $("#commentsContainer-" + requestData._id).append("<p class='subtitle'>" + CommentContent + " by: " + CommentAuthor + "</p>");
-                $("#commentText-" + requestData._id).val('');
-            },
-            function error(data) {
-                showPopup('error', "An error has occurred while attempting to comment.");
-            });
-    }
 }

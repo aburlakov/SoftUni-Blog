@@ -74,14 +74,6 @@ class UserController {
             showPopup('error', "Password too short.");
             return;
         }
-        if (requestData.interests.length > 100) {
-            showPopup('error', "Too many interests");
-            return;
-        }
-        if (requestData.age < 14) {
-            showPopup('error', "Should be 14 or older to register");
-            return;
-        }
         if (requestData.password !== requestData.confirmPassword) {
             showPopup('error', "Passwords don't mach.");
             return;
